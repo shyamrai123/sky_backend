@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+      integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    djndm
+  </body>
+
+  <script>
+    // const url = "https://res.cloudinary.com/drh0jr0hn/raw/upload/v1692683221/flights_kzt2fq.json";
+
+    // const fetchdata = async()=>{
+    //     const {data} =  await axios.get(url);
+
+    //     data.map(async(e)=>{
+
+    //        const arriaval= e.airline_iata;
+    //        const departure = e.dep_iata;
+    //        console.log(arriaval , departure);
+    //         const postData = {
+    //           arrivalData :arriaval,
+    //           departureData:departure,
+
+    //         }
+
+    //         await axios.post("http://localhost:4000/api/airports",e)
+
+    //     })}
+    //  fetchdata();       // const url = "https://res.cloudinary.com/drh0jr0hn/raw/upload/v1692683221/flights_kzt2fq.json";
+
+    // const fetchdata = async()=>{
+    //     const {data} =  await axios.get(url);
+
+    //     data.map(async(e)=>{
+
+    //        const arriaval= e.airline_iata;
+    //        const departure = e.dep_iata;
+    //        console.log(arriaval , departure);
+    //         const postData = {
+    //           arrivalData :arriaval,
+    //           departureData:departure,
+
+    //         }
+
+    //         await axios.post("http://localhost:4000/api/airports",e)
+
+    //     })}
+    //  fetchdata();
+
+    ///////countries////
+
+    // const fetchCountry = async () => {
+    //   const { data } = await axios.get(
+    //     "https://res.cloudinary.com/drh0jr0hn/raw/upload/v1692440023/allcountrie_sd4exe.json"
+    //   );
+
+    //   //  console.log(data);
+    //   const country = data;
+    //   // console.log(JSON.parse(country));
+    //   const c = country.slice(0, 1);
+    //   const d = country.slice(1, -2);
+    //   // console.log(d.split("\r\n"))
+
+    //   const countries = d.split("\r");
+    //   console.log(countries);
+    //   //  const  newCountries = countries.filter(e => e!= ", ")
+    //   const outArr = countries.map( (el) => {
+    //     //  console.log(el);
+    //     try {
+    //       t = el.trim().substring(0, el.trim().length - 3);
+    //       //  console.log(t);
+    //       y = t.split(",");
+    //       const obj = {};
+          
+    //       y.forEach((e) => {
+    //         let arr = e.split(":");
+    //         if(arr[0].substring(1, arr[0].length) == "name"){
+    //           obj[arr[0].substring(1, arr[0].length)] = arr[1]
+    //           .trim()
+    //           .substring(1, arr[1].length-2);
+    //         }
+    //         else {
+    //           obj[arr[0].substring(1, arr[0].length)] = arr[1]
+    //           .trim()
+    //           .substring(1, arr[1].length);
+    //         }
+          
+    //       });
+    //       return obj
+    //     } catch (error) {
+    //       console.log({ err: error });
+    //     }
+    //   });
+
+    //   console.log(outArr);
+
+
+    //   outArr.map(async(d)=>{
+    //        await axios.post("http://localhost:4000/api/countries", d)      
+    //   })
+
+
+    //   console.log(outArr);
+    // };
+
+    // fetchCountry();
+
+    /////cities////////
+
+     const fetchCity = async()=>{
+        const result  =  await axios.get("https://res.cloudinary.com/drh0jr0hn/raw/upload/v1692776588/Untitled-1_kgfgnf.json");
+
+          const temp1 = result.data
+        // console.log(temp1);
+
+        temp1.map(async(f)=>{
+          console.log(f);
+
+          await axios.post("http://localhost:4000/api/cities", f)
+        })
+
+    }
+
+     fetchCity();
+  </script>
+</html>
